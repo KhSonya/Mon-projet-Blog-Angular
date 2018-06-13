@@ -6,13 +6,8 @@
               Posts
            </h1>
         <ul class="list-group">
-        
-         <app-list-post  *ngFor="let post of Posts"
-                         [postTitle]="post.title"
-                         [postContent]="post.content"
-                         [postLoveIts] ="post.loveIts"
-                         [postCreated_at]="post.created_at">
-         </app-list-post>
+         <app-list-post  [blog]="Posts" 
+         ></app-list-post>
        </ul>
       </div>
     </div>

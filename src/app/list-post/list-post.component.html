@@ -1,18 +1,11 @@
-<li [ngClass]="{'list-group-item postListItem': true,
-'list-group-item-success': postLoveIts > 0,
-'list-group-item-danger': postLoveIts < 0}">
-     <article>
-         <header>
-             <h1 class="postTitle"> {{ postTitle }} </h1>
-             <div class="postDate" >{{ postCreated_at | date : 'short' }}  </div> 
-             <div class="postContent"> {{postContent}} </div>
-         </header>
-         
-         <section>
-             <button class="btn btn-success"  (click)= "onLove()">Love it! </button>
-             <button class="btn btn-danger"  (click)="onDontLove()">Don't Love it !!! </button>
-         </section>
-    </article>
-</li>
-        
-          
+<div class="container">
+    <ul class="list-group">
+        <app-list-post-item  *ngFor="let post of blog" 
+        [postTitle]="post.title"
+        [postCreated_at]="post.created_at"
+        [postContent]="post.content"
+        [postLoveIts]="post.loveIts"
+        >
+    </app-list-post-item>
+      </ul>
+</div>
